@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 エンコード・デコード</title>
+    <link rel="stylesheet" href="base64.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-btn">← 戻る</a>
+            <h1>Base64 エンコード・デコード</h1>
+            <p>文字列をBase64形式にエンコード・デコードできます</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <label for="inputText">入力テキスト:</label>
+                <textarea id="inputText" placeholder="エンコード・デコードしたいテキストを入力してください"></textarea>
+            </div>
+
+            <div class="button-section">
+                <button id="encodeBtn" class="btn btn-primary">エンコード</button>
+                <button id="decodeBtn" class="btn btn-secondary">デコード</button>
+                <button id="clearBtn" class="btn btn-clear">クリア</button>
+            </div>
+
+            <div class="output-section">
+                <label for="outputText">結果:</label>
+                <textarea id="outputText" readonly placeholder="結果がここに表示されます"></textarea>
+                <button id="copyBtn" class="btn btn-copy">コピー</button>
+            </div>
+
+            <div id="errorMsg" class="error-msg"></div>
+        </main>
+    </div>
+
+    <script src="base64.js"></script>
+</body>
+</html>

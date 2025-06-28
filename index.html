@@ -3,38 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base64 エンコード・デコード</title>
+    <title>おどうぐ箱 - Webツール集</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Base64 エンコード・デコード</h1>
-            <p>文字列をBase64形式にエンコード・デコードできます</p>
+            <h1>おどうぐ箱</h1>
+            <p>便利なWebツールをまとめました</p>
         </header>
 
-        <main>
-            <div class="input-section">
-                <label for="inputText">入力テキスト:</label>
-                <textarea id="inputText" placeholder="エンコード・デコードしたいテキストを入力してください"></textarea>
+        <main class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10,9 9,9 8,9"/>
+                    </svg>
+                </div>
+                <h2>Base64 エンコーダー</h2>
+                <p>文字列をBase64形式にエンコード・デコードできるツールです。</p>
+                <a href="base64.html" class="btn btn-primary">使用する</a>
             </div>
 
-            <div class="button-section">
-                <button id="encodeBtn" class="btn btn-primary">エンコード</button>
-                <button id="decodeBtn" class="btn btn-secondary">デコード</button>
-                <button id="clearBtn" class="btn btn-clear">クリア</button>
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="16" rx="2"/>
+                        <path d="M7 8h10"/>
+                        <path d="M7 12h10"/>
+                        <path d="M7 16h10"/>
+                    </svg>
+                </div>
+                <h2>ソートアルゴリズム可視化</h2>
+                <p>様々なソートアルゴリズムの動作をアニメーションで確認できます。</p>
+                <a href="sorting.html" class="btn btn-primary">使用する</a>
             </div>
-
-            <div class="output-section">
-                <label for="outputText">結果:</label>
-                <textarea id="outputText" readonly placeholder="結果がここに表示されます"></textarea>
-                <button id="copyBtn" class="btn btn-copy">コピー</button>
-            </div>
-
-            <div id="errorMsg" class="error-msg"></div>
         </main>
-    </div>
 
-    <script src="script.js"></script>
+        <footer>
+            <p>&copy; 2024 おどうぐ箱</p>
+        </footer>
+    </div>
 </body>
 </html>

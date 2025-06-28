@@ -12,169 +12,155 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     background: white;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    padding: 40px;
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 header h1 {
     color: #333;
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-    font-weight: 600;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 header p {
     color: #666;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
-.input-section,
-.output-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.tool-card {
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-label {
-    font-weight: 600;
-    color: #333;
-    font-size: 1.1rem;
-}
-
-textarea {
-    width: 100%;
-    min-height: 120px;
-    padding: 15px;
-    border: 2px solid #e1e5e9;
-    border-radius: 8px;
-    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-    font-size: 14px;
-    resize: vertical;
-    transition: border-color 0.3s ease;
-}
-
-textarea:focus {
-    outline: none;
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-textarea::placeholder {
-    color: #999;
-}
-
-.button-section {
+.tool-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
     display: flex;
-    gap: 15px;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    color: white;
+}
+
+.tool-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.tool-card h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.tool-card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
 }
 
 .btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 120px;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary {
-    background: #667eea;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
 }
 
 .btn-primary:hover {
-    background: #5a6fd8;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-.btn-secondary {
-    background: #48bb78;
-    color: white;
-}
-
-.btn-secondary:hover {
-    background: #38a169;
-    transform: translateY(-2px);
-}
-
-.btn-clear {
-    background: #ed8936;
-    color: white;
-}
-
-.btn-clear:hover {
-    background: #dd7724;
-    transform: translateY(-2px);
-}
-
-.btn-copy {
-    background: #805ad5;
-    color: white;
-    align-self: flex-start;
-    margin-top: 10px;
-}
-
-.btn-copy:hover {
-    background: #6b46c1;
-    transform: translateY(-2px);
-}
-
-.error-msg {
-    color: #e53e3e;
-    background: #fed7d7;
-    padding: 12px;
-    border-radius: 6px;
-    border-left: 4px solid #e53e3e;
-    display: none;
-    font-weight: 500;
-}
-
-.error-msg.show {
-    display: block;
+footer {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
     .container {
-        padding: 20px;
+        padding: 30px 20px;
         margin: 10px;
     }
     
     header h1 {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
     }
     
-    .button-section {
-        flex-direction: column;
-        align-items: center;
+    header p {
+        font-size: 1rem;
     }
     
-    .btn {
-        width: 100%;
-        max-width: 200px;
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     
-    textarea {
-        min-height: 100px;
-        font-size: 16px;
+    .tool-card {
+        padding: 25px 20px;
+    }
+    
+    .tool-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 15px;
+    }
+    
+    .tool-icon svg {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .tool-card h2 {
+        font-size: 1.3rem;
     }
 }
 
@@ -184,14 +170,18 @@ textarea::placeholder {
     }
     
     .container {
-        padding: 15px;
+        padding: 20px 15px;
     }
     
     header h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     
     header p {
         font-size: 0.9rem;
+    }
+    
+    .tool-card {
+        padding: 20px 15px;
     }
 }

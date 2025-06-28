@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ソートアルゴリズム可視化 - おどうぐ箱</title>
+    <link rel="stylesheet" href="sorting.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-btn">← 戻る</a>
+            <h1>ソートアルゴリズム可視化</h1>
+            <p>様々なソートアルゴリズムの動作をアニメーションで確認できます</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <div class="control-group">
+                    <label for="algorithmSelect">アルゴリズム:</label>
+                    <select id="algorithmSelect">
+                        <option value="bubble">バブルソート</option>
+                        <option value="selection">選択ソート</option>
+                        <option value="insertion">挿入ソート</option>
+                        <option value="quick">クイックソート</option>
+                        <option value="merge">マージソート</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="arraySizeSlider">配列サイズ: <span id="arraySizeValue">30</span></label>
+                    <input type="range" id="arraySizeSlider" min="10" max="100" value="30">
+                </div>
+
+                <div class="control-group">
+                    <label for="speedSlider">アニメーション速度: <span id="speedValue">50</span>ms</label>
+                    <input type="range" id="speedSlider" min="10" max="200" value="50">
+                </div>
+
+                <div class="button-group">
+                    <button id="generateBtn" class="btn btn-secondary">新しい配列を生成</button>
+                    <button id="sortBtn" class="btn btn-primary">ソート開始</button>
+                    <button id="pauseBtn" class="btn btn-warning" disabled>一時停止</button>
+                    <button id="resetBtn" class="btn btn-clear">リセット</button>
+                </div>
+            </div>
+
+            <div class="visualization">
+                <div id="arrayContainer" class="array-container">
+                    <!-- バーがここに動的に生成されます -->
+                </div>
+                <div class="statistics">
+                    <div class="stat">
+                        <span class="stat-label">比較回数:</span>
+                        <span id="comparisons">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">交換回数:</span>
+                        <span id="swaps">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">経過時間:</span>
+                        <span id="elapsedTime">0ms</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">状態:</span>
+                        <span id="status" class="status-ready">準備完了</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-info">
+                <h3 id="algoTitle">バブルソート</h3>
+                <p id="algoDescription">隣接する要素を比較し、順序が逆であれば交換を繰り返すソートアルゴリズムです。</p>
+                <div class="complexity">
+                    <div class="complexity-item">
+                        <span class="complexity-label">時間計算量（平均）:</span>
+                        <span id="timeComplexity">O(n²)</span>
+                    </div>
+                    <div class="complexity-item">
+                        <span class="complexity-label">空間計算量:</span>
+                        <span id="spaceComplexity">O(1)</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="sorting.js"></script>
+</body>
+</html>
